@@ -12,11 +12,9 @@ do
 	for f in $dir/${dirArr[i]}/*; do
 		if [ -e $f.bowtie2out.txt ]
 		then
-			rm $f.bowtie2out.txt
-			echo "bowtie deleted"
-		fi
-		if [ ! -e $f.txt ]
-		then
+			metaphlan $f.bowtie2out.txt --input_type bowtie2out -o $f.txt
+			echo "bowtie used"
+		else
 			metaphlan $f --input_type fastq -o $f.txt
 			echo "no output found"
 		fi
