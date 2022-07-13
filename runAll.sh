@@ -16,7 +16,7 @@ do
 			echo "bowtie used"
 		else
 			metaphlan $f --input_type fastq -o $f.txt
-			echo "no output found"
+			echo "fastq used"
 		fi
 		echo "done $f"
 	done
